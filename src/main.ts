@@ -1,5 +1,5 @@
 import readline from "readline"
-import { day1 } from "./day-1"
+import { programs } from "./programs"
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -11,17 +11,16 @@ enum LoopState {
   STOP,
 }
 
-const programs: Record<string, () => void> = {
-  "day 1": day1,
-}
-
 const parseAnswer = (answer: string): LoopState => {
-  if (programs.hasOwnProperty(answer)) {
-    programs[answer]()
-  }
   if (answer === "q") {
     return LoopState.STOP
   } else {
+    if (programs.has(answer)) {
+      programs.get(answer)?.()
+    } else {
+      console.error(`can't find the ${answer} program`)
+    }
+
     return LoopState.LOOP
   }
 }
