@@ -1,5 +1,5 @@
-import { day1 } from "./day-1"
-import { day1_2 } from "./day-1_2"
+import { day1 } from "./challenges/day-1"
+import { day1_2 } from "./challenges/day-1_2"
 
 export const programs = new Map<string, () => void>()
 
