@@ -2,5 +2,15 @@
   "name": "advent-of-code-2021",
   "repository": "https://github.com/abderrahmane-tj/advent-of-code-2021.git",
   "author": "Abderrahmane TAHRI JOUTI <tj.abderrahmane@gmail.com>",
-  "license": "CC0-1.0"
+  "license": "CC0-1.0",
+  "scripts": {
+    "dev": "tsnd --clear --no-notify src/main.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.11",
+    "prettier": "^2.5.0",
+    "ts-node": "^10.4.0",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.5.2"
+  }
 }
