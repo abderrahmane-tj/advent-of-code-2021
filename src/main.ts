@@ -1,5 +1,6 @@
 import readline from "readline"
 import { programs } from "./programs"
+import { day4 } from "./challenges/day-4"
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -27,9 +28,8 @@ const parseAnswer = (answer: string): LoopState => {
 
 async function main() {
   do {
-    const answer = await new Promise<string>((resolve) =>
-      rl.question("λ ", resolve)
-    )
+    day4()
+    const answer = await new Promise<string>((resolve) => rl.question("λ ", resolve))
     if (parseAnswer(answer) === LoopState.STOP) {
       break
     }
