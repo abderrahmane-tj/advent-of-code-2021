@@ -13,10 +13,30 @@ export const day4 = () => {
         .map((row) => row.trim().split(" "))
     )
     .map((grid) => ({
-      lineCounters: new Array(5).fill(0),
+      columnCounters: new Array(5).fill(0),
       rowCounters: new Array(5).fill(0),
-      grid,
+      matrix: grid,
     }))
-  console.log(draws)
-  console.log(grids)
+
+  draws.every((number) => {
+    return grids.every((grid) => {
+      for (let r = 0; r < 5; r++) {
+        for (let c = 0; c < 5; c++) {
+          if (number === grid.matrix[r][c]) {
+            grid.rowCounters[r]++
+            grid.columnCounters[c]++
+            if (grid.rowCounters[r] === 5) {
+              console.log("row", r, grid.matrix)
+              return false
+            }
+            if (grid.columnCounters[c] === 5) {
+              console.log("column", c, grid.matrix)
+              return false
+            }
+          }
+        }
+      }
+      return true
+    })
+  })
 }
